@@ -1,0 +1,17 @@
+{
+  "name": "redis2go",
+  "version": "1.0.0",
+  "description": "A minimal redis implementation of a subset of its functionalities in JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "redis"
+  ],
+  "author": "Cristian E. Caroli",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.0.0"
+  }
+}
