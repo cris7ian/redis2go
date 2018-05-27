@@ -22,20 +22,83 @@ are justified and put on context for future consideration.
 - [Architecture](./doc/001-architecture.md)
 - [Promises](./doc/002-promises.md)
 
-## Installation
+## Installation in your Project
 
-You'll need Node `v6.10.3` and `npm`. First, install dependencies.
+You'll need Node `v6.10.3` and `npm`. This packaged it's published on [NPM](https://www.npmjs.com/package/redis2go), so 
+you can add it to your JS projects.
 
 ```bash
-npm run install
+npm install redis2go --save
 ```
 
-That's it.
+### Usage Example
+
+```js
+
+const Redis2Go = require('./redis2go')
+const client = new Redis2Go()
+
+client.set(100).then(result => console.log(result)) // 'OK'
+
+
+client.get('my_key').then(result => console.log(result)) // '100'
+ 
+```
+
+### JS API of Available Commands
+
+For behavior of each command, check the [Command Reference](https://redis.io/commands).
+
+#### GET
+```
+ get(key) -> Promise
+```
+
+#### SET
+```
+ set(key) -> Promise
+```
+
+#### DEL
+```
+ del(...args) -> Promise
+```
+
+#### INCR
+```
+ incr(key) -> Promise
+```
+
+#### DBSIZE
+```
+ dbsize() -> Promise
+```
+
+#### ZADD
+```
+ zadd(key, [... order, value]) -> Promise
+```
+
+#### ZCARD
+```
+ zcard(key) -> Promise
+```
+
+#### ZRANK
+```
+ zrank(key, value) -> Promise
+```
+
+#### ZRANGE
+```
+ zrange(key, start, end) -> Promise
+```
 
 ## Tests
 
-To run unit tests,
+To run unit tests, clone this repo and run the following:
 
 ```bash
+npm install
 npm run test
 ```
