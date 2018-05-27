@@ -22,6 +22,7 @@ are justified and put on context for future consideration.
 
 - [Architecture](./doc/001-architecture.md)
 - [Promises](./doc/002-promises.md)
+- [Hapi](./doc/003-hapi.md)
 
 ## Installation in your Project
 
@@ -102,4 +103,15 @@ To run unit tests, clone this repo and run the following:
 ```bash
 npm install
 npm run test
+```
+
+To run integration tests:
+
+```bash
+npm install
+npm run start
+
+#different terminal run the tests
+npm run integration-tests
+
 ```

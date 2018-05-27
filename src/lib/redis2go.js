@@ -112,18 +112,16 @@ class Redis2Go {
         const sortedSet = Array.from(element.set)
           .sort(object => element.order[object])
           .reverse()
-        const rank = sortedSet
-          .findIndex(orderedValue => orderedValue === value)
+        const rank = sortedSet.findIndex(orderedValue => orderedValue === value)
         resolve(rank)
       }
     })
   }
 
   zrange(key, start, end) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       const element = this.db[key]
-      const hasValue =
-        element !== undefined && element.zset
+      const hasValue = element !== undefined && element.zset
       if (!hasValue) {
         reject('Element is not a set')
       } else {
@@ -135,7 +133,6 @@ class Redis2Go {
       }
     })
   }
-
 }
 
 module.exports = Redis2Go

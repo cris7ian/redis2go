@@ -4,17 +4,24 @@
   "description": "A minimal redis implementation of a subset of its functionalities in JS.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest src",
+    "integration-tests": "jest integration-tests/ --runInBand",
+    "start": "node src/server.js"
   },
   "keywords": [
     "redis"
   ],
+  "jest": {
+    "testEnvironment": "node"
+  },
   "author": "Cristian E. Caroli",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.18.0",
     "jest": "^23.0.0"
   },
   "dependencies": {
+    "hapi": "^17.5.0",
     "lodash": "^4.17.10"
   }
 }

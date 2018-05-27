@@ -177,7 +177,7 @@ describe('Redis2Go Commands', () => {
     })
   })
 
-  it("should return the full range of my zset", done => {
+  it('should return the full range of my zset', done => {
     const redis = new Redis2Go()
     Promise.all([
       redis.zadd('myzset', 1, 'one'),
@@ -191,7 +191,7 @@ describe('Redis2Go Commands', () => {
     })
   })
 
-  it("should return the element between 2 and 3", done => {
+  it('should return the element between 2 and 3', done => {
     const redis = new Redis2Go()
     Promise.all([
       redis.zadd('myzset', 1, 'one'),
@@ -205,7 +205,7 @@ describe('Redis2Go Commands', () => {
     })
   })
 
-  it("should return the last 2 elements", done => {
+  it('should return the last 2 elements', done => {
     const redis = new Redis2Go()
     Promise.all([
       redis.zadd('myzset', 1, 'one'),
