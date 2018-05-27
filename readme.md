@@ -96,6 +96,105 @@ For behavior of each command, check the [Command Reference](https://redis.io/com
  zrange(key, start, end) -> Promise
 ```
 
+## Server
+
+To start a server instance:
+
+```bash
+npm run start
+
+```
+
+You can specify which port to run by setting the environment variable `PORT`, by default it 
+will run in the port `3000`.
+
+### Command Mode
+
+You can run raw commands with query parameters:
+
+```bash
+curl localhost:8080/?cmd=SET%20mykey%20cool-value
+OK
+curl localhost:8080/?cmd=GET%20mykey
+cool-value
+curl localhost:8080/?cmd=DEL%20mykey
+OK
+curl localhost:8080/?cmd=GET%20mykey
+(nil)
+```
+
+### HTTP API
+
+For a more idiomatic way of communicating with Redis2go, we have a Full Rest API. 
+
+Make sure to add `Content-Type: text/plain` as it is the data type that the API will consume. 
+
+### ADD
+
+```
+method: 'PUT',
+path: '/{key}',
+```
+
+### GET
+```
+method: 'GET',
+path: '/{key}',
+```
+
+### DELETE
+
+```
+method: 'DELETE',
+path: '/{key}',
+```
+
+### DBSIZE
+
+```
+method: 'GET',
+path: '/dbSize',
+```
+
+### INCR
+
+```
+method: 'PUT',
+path: '/{key}/incr',
+```
+
+### ZADD
+
+```
+method: 'PUT',
+path: '/{key}/zadd',
+```
+
+### ZCARD
+```
+method: 'GET',
+path: '/{key}/zcard',
+```
+
+### ZRANK
+```
+method: 'GET',
+path: '/{key}/zrank/{value}'
+```
+
+### ZRANGE
+```
+method: 'GET',
+path: '/{key}/zrange/{start}/{end}',
+```
+
+## Example
+
+```bash
+curl -X POST -H "Content-Type: text/plain" --data "cool-value" -X PUT localhost:3000/mykey
+```
+
+
 ## Tests
 
 To run unit tests, clone this repo and run the following:
@@ -111,7 +210,7 @@ To run integration tests:
 npm install
 npm run start
 
-#different terminal run the tests
+#different terminal, run the tests
 npm run integration-tests
 
 ```
