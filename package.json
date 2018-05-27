@@ -1,6 +1,6 @@
 {
   "name": "redis2go",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal redis implementation of a subset of its functionalities in JS.",
   "main": "index.js",
   "scripts": {
