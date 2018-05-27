@@ -1,5 +1,6 @@
 # Redis2Go 
 [![Build Status](https://travis-ci.org/cris7ian/redis2go.svg?branch=master)](https://travis-ci.org/cris7ian/redis2go)
+[![npm version](https://badge.fury.io/js/redis2go.svg)](https://badge.fury.io/js/redis2go)
 
 This is a implementation of a subset of [Redis](https://redis.io/) commands. In particular:
 
