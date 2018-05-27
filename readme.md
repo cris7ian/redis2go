@@ -57,7 +57,7 @@ For behavior of each command, check the [Command Reference](https://redis.io/com
 
 #### SET
 ```
- set(key) -> Promise
+ set(key, value, expiration_time) -> Promise
 ```
 
 #### DEL
