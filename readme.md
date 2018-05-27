@@ -113,14 +113,14 @@ will run in the port `3000`.
 You can run raw commands with query parameters:
 
 ```bash
-curl localhost:8080/?cmd=SET%20mykey%20cool-value
+curl 'localhost:8080/?cmd=SET%20mykey%20cool-value'
 OK
-curl localhost:8080/?cmd=GET%20mykey
+curl 'localhost:8080/?cmd=GET%20mykey'
 cool-value
-curl localhost:8080/?cmd=DEL%20mykey
+curl 'localhost:8080/?cmd=DEL%20mykey'
 OK
-curl localhost:8080/?cmd=GET%20mykey
-(nil)
+curl 'localhost:8080/?cmd=GET%20mykey'
+(nil) # no value
 ```
 
 ### HTTP API
