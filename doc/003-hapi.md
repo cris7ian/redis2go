@@ -1,4 +1,4 @@
-# 2. Promises 
+# 3. Hapi 
 
 Date: 27/05/2018
 
